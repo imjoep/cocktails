@@ -1,0 +1,29 @@
+<%-include('../partial/header')-%>
+<div class=" container">
+  <h4>Items:</h4>
+  <ul>
+    <% cocktails.forEach(function(item) { %>
+      <li>
+        <b>Name: </b><%= item.name %>
+     <ul>
+        <li>
+                <b>Glass: </b><%= item.glass %>
+        </li>
+        <li>
+                <b>Category: </b><%= item.category %>
+        </li>
+        <li>
+                <b>Ingredients: </b><%= item.ingredients %>
+        </li>
+        <li>
+                <b>Garnish: </b><%= item.garnish %>
+        </li>
+        <li>
+                <b>Preparation: </b><%= item.preparation %>
+        </li>
+     </ul>
+     </li>
+      <% }); %>
+  </ul>
+    </div>
+<%-include('../partial/footer')-%>

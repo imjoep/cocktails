@@ -15,12 +15,37 @@
     <input type="text" name="name">
     <input type="submit" value="Add">
   </form>
+
+<form id="search" action="" method="post" class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" id="q" name="q" placeholder="Search...">
+    </div>
+    <button type="submit" class="btn btn-primary">Search users</button>
+</form>
+
   <h4>Items:</h4>
   <ul>
-    <% items.forEach(function(item) { %>
+    <% cocktails.forEach(function(item) { %>
       <li>
-        <%= item.name %>
-      </li>
+        <b><%= item.name %></b>
+     <ul>
+        <li>
+                <b>Glass: </b><%= item.glass %>
+        </li>
+        <li>
+                <b>Category: </b><%= item.category %>
+        </li>
+        <li>
+                <b>Ingredients: </b><%= item.ingredients %>
+        </li>
+        <li>
+                <b>Garnish: </b><%= item.garnish %>
+        </li>
+        <li>
+                <b>Preparation: </b><%= item.preparation %>
+        </li>
+     </ul>
+     </li>
       <% }); %>
   </ul>
 </body>

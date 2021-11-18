@@ -1,0 +1,75 @@
+<%-include('../partial/header')-%>
+<div class=" container">
+    <center>
+<!--    <div class="card" style="width: fit-content;">
+        <div class="card-body">
+         <form action="/" method="POST">
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <input type="text" class="form-control" name="author" placeholder="Auhtor Name" required>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12"">
+                        <input type="text" class="form-control" name="book" placeholder="Book Name" required>
+                      </div>
+                </div>
+                <button type="submit">Submit</button>
+              </form>
+        </div>
+      </div> -->
+    </center>
+    <br>
+
+<h1>Node App with MongoDB in Docker containers</h1>
+  <form method="post" action="/item/add">
+    <label for="name">Input</label>
+    <input type="text" name="name">
+    <input type="submit" value="Add">
+  </form>
+<form id="search" action="/search_ing" method="get" class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" id="q" name="q" placeholder="Search...">
+    </div>
+    <button type="submit" class="btn btn-primary">Search users</button>
+</form>
+
+    <%if(data.length>0){%>
+        <center>
+        <div style="width:auto; border-style: solid;border-color: black;">
+        <table class="table table-border table-hover">
+            <thead class="bg-warning">
+                <tr>
+                    <th>
+                        Number
+                    </th>
+                  <th>
+                        Name
+                    </th>
+                    <th>
+                        Ingredients
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(var i=0;i< data.length;i++){%>
+                <tr>
+                    <td>
+                        <%=i+1%>
+                    </td>
+                    <td>
+                     <%=data[i].name%>
+                    </td>
+                    <td>
+                      <%=data[i].ingredients.ingredient%>
+                    </td>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+    </center>
+    <%}%>
+
+    </div>
+<%-include('../partial/footer')-%>
